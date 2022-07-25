@@ -12,3 +12,18 @@
 # 感觉一个首先的思路是，对于输入的不同进制得先统一进制
 N = input()
 M = input()
+print(N)
+def huiwen(x, i=0, j=0):
+    if x[i] == x[j]:
+        i+=1
+        j-=1
+        if i==j:
+            print("是回文数")
+            return True
+        else:
+            return huiwen(x, i, j)
+    else:
+        print("不是回文数")
+        return False
+
+huiwen(N, j=len(N)-1)
